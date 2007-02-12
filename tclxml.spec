@@ -1,5 +1,5 @@
 Summary:	XML parsing for Tcl
-Summary(pl.UTF-8):   Analizowanie XML-a dla Tcl-a
+Summary(pl.UTF-8):	Analizowanie XML-a dla Tcl-a
 Name:		tclxml
 Version:	2.6
 Release:	1
