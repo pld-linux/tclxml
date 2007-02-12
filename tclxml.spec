@@ -1,5 +1,5 @@
 Summary:	XML parsing for Tcl
-Summary(pl):	Analizowanie XML-a dla Tcl-a
+Summary(pl.UTF-8):   Analizowanie XML-a dla Tcl-a
 Name:		tclxml
 Version:	2.6
 Release:	1
@@ -19,11 +19,11 @@ that allows "Plug-and-Play" parser implementations; ie. an application
 will be able to use different parser implementations without change to
 the application code.
 
-%description -l pl
-TclXML to API do analizy dokumentów XML przy u¿yciu jêzyka skryptowego
+%description -l pl.UTF-8
+TclXML to API do analizy dokumentÃ³w XML przy uÅ¼yciu jÄ™zyka skryptowego
 Tcl. Jest to pakiet z kilkoma implementacjami analizatora. Celem
-pakietu TclXML jest dostarczenie API dla skryptów Tcl pozwalaj±cego na
-implementowanie parserów "Plug-and-Play" - czyli aplikacja mo¿e u¿ywaæ
+pakietu TclXML jest dostarczenie API dla skryptÃ³w Tcl pozwalajÄ…cego na
+implementowanie parserÃ³w "Plug-and-Play" - czyli aplikacja moÅ¼e uÅ¼ywaÄ‡
 innych implementacji analizatora bez zmian w kodzie aplikacji.
 
 %prep
