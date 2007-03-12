@@ -1,12 +1,12 @@
 Summary:	XML parsing for Tcl
 Summary(pl.UTF-8):	Analizowanie XML-a dla Tcl-a
 Name:		tclxml
-Version:	2.6
+Version:	3.1
 Release:	1
 License:	distributable
 Group:		Development/Languages/Tcl
 Source0:	http://dl.sourceforge.net/tclxml/%{name}-%{version}.tar.gz
-# Source0-md5:	a54d1d6965e2123529e80d2a7ed251ec
+# Source0-md5:	35de63a4ceba7a6fdb85dd1a62f2e881
 URL:		http://tclxml.sourceforge.net/tclxml.html
 BuildRequires:	tcl-devel >= 8.4.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,13 +30,18 @@ innych implementacji analizatora bez zmian w kodzie aplikacji.
 %setup -q
 
 %build
-%configure
+%configure2_13 \
+%if %{_lib} == "lib64"
+	--enable-64bit \
+%endif
+	--enable-threads
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{makeinstall}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -44,8 +49,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog LICENSE README doc/*.html
-%{_includedir}/*.h
+%{_includedir}/tclxml
 %dir %{_libdir}/Tclxml*.*
-%attr(755,root,root) %dir %{_libdir}/Tclxml*.*/*.so
+%dir %{_libdir}/Tclxml*.*/*.so
 %{_libdir}/Tclxml*.*/*.tcl
-%attr(755,root,root) %dir %{_libdir}/*.sh
+%dir %{_libdir}/*.sh
